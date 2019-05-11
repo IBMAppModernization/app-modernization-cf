@@ -11,7 +11,7 @@ In this lab you will  be connecting your Git repository with the Spring Boot sam
 
 If you haven't already:
 
-1. Complete the lab *Using the Cloud Foundry CLI*  by following the instructions [here](https://github.ibm.com/lijing-us/hands-on-labs/tree/master/Lab2-PostgreSQL)
+1. Complete the lab *Using the Cloud Foundry CLI*  by following the instructions [here](../lab2/README.md)
 
 ### Step 1: Fork the Github repo that contains the Spring Pet Clinic code
 
