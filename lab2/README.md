@@ -19,10 +19,11 @@ You need the following accounts and software:
 The Cloud Foundry (cf) CLI will be installed as part of the lab exercise.
 
 
-Section 1. Installing the Cloud Foundry CLI
-===========================================
+Section 1. Installing the IBM Cloud CLI
+=======================================
 
-If you already have the Cloud Foundry CLI installed, skip to the next lab section
+The IBM Cloud CLI includes a supported copy of the Cloud Foundry CLI which you will be using for this lab. If you already have the IBM CLI and Cloud Foundry CLI installed, skip to the next lab section
+
 
 1.  In a web browser, open the [IBM Cloud CLI page](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli).
 
@@ -31,19 +32,12 @@ If you already have the Cloud Foundry CLI installed, skip to the next lab sectio
 3.  Follow the steps appropriate to your workstation operating system. 
     > For MacOS and Windows, after downloading the package, run the installer.
     >
-    > For Linux, use sudo (or root if necessary) to run the installer (replacing with the file name of your download).
-        
-       Debian/Ubuntu (deb based)
+    > For Linux, use sudo (or root if necessary) to run the installer.
         
        ```
-       sudo dpkg -i ./cf-cli-installer_6.32.0_x86-64.deb && sudo apt-get install -f
+       curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
        ```
-        
-       RedHat/CentOS (rpm based)
-       ```
-       sudo rpm -iv cf-cli-installer_6.32.0_x86-64.rpm
-       ```
-After the Cloud Foundry CLI is installed, proceed to the next lab section.
+After the IBM Cloud CLI is installed, proceed to the next lab section.
 
 
 Section 2. Downloading Sample Application
@@ -248,7 +242,7 @@ In this section, you will create a PostgreSQL service instance and then redeploy
 9. Recompile the application if the file src/main/resources/application-postgresql.properties were modified. 
 
    ```
-   mvn package
+   mvn package -Dmaven.test.skip=true
    ```
 10. Redeploy the application to IBM Cloud.
 
