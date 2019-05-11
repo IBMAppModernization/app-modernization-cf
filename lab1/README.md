@@ -119,7 +119,7 @@ Section 3. Managing an application using the IBM Cloud console
 
     ![](images/image18.png)
 
-    You can add an additional hostname for your application, if you do, wait a moment for the app to restart and then select the link added to the **Routes** button. This can also be used to make the application available in a custom domain. IBM Cloud provides full support for external domains and adding your own SSL certificates for external domains.
+    You can add an additional hostname for your application, if you do, wait a moment for the route to be propagated in the Cloud Floudry platform and then select the link added to the **Routes** button. This can also be used to make the application available in a custom domain. IBM Cloud provides full support for external domains and adding your own SSL certificates for external domains.
 
     In the Overview pane, you can scroll down to see a stream of high-level events for the application in the activity feed and optionally configure continuous delivery to automate builds and deployments for the application.
 
