@@ -32,7 +32,7 @@ The IBM Cloud CLI includes a supported copy of the Cloud Foundry CLI which you w
 3.  Follow the steps appropriate to your workstation operating system. 
     > For MacOS and Windows, after downloading the package, run the installer.
     >
-    > For Linux, use sudo (or root if necessary) to run the installer.
+    > For Linux, use a command prompt to run the installer.
         
        ```
        curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
@@ -200,17 +200,21 @@ In this section, you will create a PostgreSQL service instance and then redeploy
 
 2.  Before you redeploy the application, you will create a PostgreSQL database service instance. Optionally,you can view the available services by running the following command:
 
+    ```
     ibmcloud cf marketplace
+    ```
 
     This command will take a little while to run because it collects all catalog entries.
 
-3. Create your PostgreSQL database service.
+3. Create your PostgreSQL database service. (if you have already created a service instance skip to step 4)
 
-   The PostgreSQL database can be created from the command line using the ibmcloud resource service-instance-create command. This takes a service instance name, a service name, plan name and location. For example, if you wished to create a database service named "mypsql-###" and you wanted it to be a "databases-for-postgresql" deployment on the standard plan running in the us-south region, the command would look like this:
+   First, set the target resource group for the service instance. This will either be `default` or a specific resource group that your account administrator has created for you to use. Replace RESOURCE_GROUP in the first command with that value. Then, a PostgreSQL database can be created from the command line using the ibmcloud resource service-instance-create command. This takes a service instance name, a service name, plan name and location. For example, if you wished to create a database service named "mypsql-###" and you wanted it to be a "databases-for-postgresql" deployment on the standard plan running in the us-south region, the command would look like this:
 
    ```
+   ibmcloud target -g RESOURCE_GROUP
    ibmcloud resource service-instance-create mypsql-### databases-for-postgresql standard us-south
    ```
+   
 4. Create a Cloud Foundry alias for the PostgreSQL database service.
 
    ```
