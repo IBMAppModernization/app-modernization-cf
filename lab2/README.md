@@ -90,7 +90,7 @@ In this section, you will deploy the `Spring PetClinic Sample Application` to IB
 2.  Log in to Cloud Foundry by issuing the following commands.
     
     ```
-    ibmcloud login
+    ibmcloud login --sso
     ```
 
 3.  Enter the email and password that you used to log in to the IBM Cloud web UI. When you log in, you will be prompted to choose the cloud account to use if there is more than one associated with your IBM id.
